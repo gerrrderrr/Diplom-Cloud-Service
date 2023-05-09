@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<body style="
+background-attachment: fixed;
+background-size: 100% 100%;
+font-family: Arial,serif;
+color: dimgray">
+<div class="block">
+    <style>
+        .block {
+            background: rgba(255, 255, 255, 0.99);
+            opacity: .9;
+            padding: 30px;
+            width: fit-content;
+            margin: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px 2px darkgray;
+        }
+
+        input {
+            border-radius: 8px;
+            border-color: lavender;
+            box-shadow: 0 0 4px 2px honeydew;
+        }
+
+        input:focus {
+            outline-color: white;
+            box-shadow: 0 0 3px 2px lightslategray;
+        }
+
+    </style>
+    <h2 style="text-align: center; color: dimgray">Sign up</h2>
+    <form th:action="@{/signup}" th:method="post">
+        <p style="margin-bottom: auto"> Create username:</p>
+        <input style="width: 450px" type="text" name="username" required>
+
+        <p style="margin-bottom: auto"> Name:</p>
+        <input style="width: 450px" type="text" name="name" required>
+
+        <p style="margin-bottom: auto"> Lastname:</p>
+        <input style="width: 450px" type="text" name="lastname" required>
+
+        <p style="margin-bottom: auto"> Age:</p>
+        <input style="width: 450px" type="number" min="18" name="age" required>
+
+        <p style="margin-bottom: auto"> Email:</p>
+        <input style="width: 450px" type="email" name="email" required>
+
+        <p style="margin-bottom: auto"> Create password:</p>
+        <input style="width: 450px" type="password" name="password" id="input" required minlength="10">
+
+        <input type="checkbox" onclick="myFunction()">Show Password
+        <script>
+            function myFunction() {
+                const x = document.getElementById("input");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+
+        <br>
+        <p><input style="width: 100px; color: dimgray; border-radius: 3px;border-color: lightgrey" type="submit"
+                  value="Submit"/></p>
+    </form>
+</div>
+</body>
+</html>
